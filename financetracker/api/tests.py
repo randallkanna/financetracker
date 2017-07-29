@@ -33,7 +33,7 @@ class ViewTestCase(TestCase):
 
     def test_authorization_is_enforced(self):
         new_client = APIClient()
-        res = new_client.get('/lists', kwargs={'pk': 3}, format="json")
+        res = new_client.get('/lists/', kwargs={'pk': 3}, format="json")
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
     def test_api_can_get_a_list(self):
